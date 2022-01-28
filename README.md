@@ -13,13 +13,21 @@
 
  Luego, en la terminal, dentro de la carpeta WarmUpBack, ejecutar el siguiente codigo:
 
- ### `docker build -t warmupbackend .`
+ ```bash
+ docker build -t warmupbackend .
+ ```
 
  Esto creara las imagenes necesarias para correr la app.
  Una vez completados estos pasos, en la terminal, dentro de la misma carpeta 'WarmUpBackend' ejecutar el siguiente codigo:
 
- ### `docker-compose up`
+ ```bash
+ docker-compose up
+ ```
 
  Esto iniciaria nuestra aplicacion.
 
- Una vez terminado este paso visitar en su navegador preferido el siguiente enlace: http://localhost:3000
+ Una vez terminado este paso visitar en su navegador preferido el siguiente enlace: 
+
+  ```bash
+ http://localhost:3000
+ ```
