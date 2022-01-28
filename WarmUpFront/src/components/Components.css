@@ -1,0 +1,31 @@
+.row{
+    height: auto;
+    width: 100%;
+    background-color: white;
+    border-bottom: solid 1px black;
+    font-size: 13pt;
+    margin: 0;
+    display: flex;
+    position: relative;
+    color: #333;
+}
+
+.row:hover{
+    background-color: #fafafa;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    height: 45px;
+    margin: 0;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    visibility: hidden
+}
+
+.row:hover .button{
+    visibility: visible;
+}
