@@ -5,7 +5,7 @@
  Este proyecto ocupa MongoDB Atlas (Cloud db) por lo que no es necesario crear una imagen de docker para la base de datos
 
 # Como correr la aplicacion
- En la terminal, dentro de la carpeta WarmUpFront, ejercutar el siguiente codigo: 
+ En la terminal, dentro de la carpeta WarmUpFront, ejecutar el siguiente codigo: 
 
  ```bash
  docker build -t warmupfront .
