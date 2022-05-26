@@ -8,7 +8,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://Pipexz:taTMxtPswjaEBsK2@clusterwarmup.xrbgc.mongodb.net/warmup?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('mongodb+srv://Pipexz:yJMxUigewCnQ152V@clusterwarmup.xrbgc.mongodb.net/warmup?retryWrites=true&w=majority'),
     HttpModule,
     NewModule,
     ScheduleModule.forRoot()

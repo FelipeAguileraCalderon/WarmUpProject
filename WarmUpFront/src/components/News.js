@@ -47,11 +47,11 @@ export default function News(props) {
     const hora = ((hora12 < 10) ? ('0' + hora12) : hora12)
     const minutos = ((auxiliarDate.getMinutes() < 10) ? ('0' + auxiliarDate.getMinutes()) : auxiliarDate.getMinutes())
     const data = ((auxiliarDate.getHours()>=12) ? 'pm' : 'am')
-    if(auxiliarDate.getDate() == currentDay.getDate() && auxiliarDate.getMonth() == currentDay.getMonth() && auxiliarDate.getFullYear() == currentDay.getFullYear()){
+    if(auxiliarDate.getDate() === currentDay.getDate() && auxiliarDate.getMonth() === currentDay.getMonth() && auxiliarDate.getFullYear() === currentDay.getFullYear()){
         
         date = `${hora}:${minutos} ${data}`
     }
-    else if (auxiliarDate.getDate() == yesterday.getDate() && auxiliarDate.getMonth() == yesterday.getMonth() && auxiliarDate.getFullYear() == yesterday.getFullYear()){
+    else if (auxiliarDate.getDate() === yesterday.getDate() && auxiliarDate.getMonth() === yesterday.getMonth() && auxiliarDate.getFullYear() === yesterday.getFullYear()){
         date = 'Yesterday'
     }
     else{
@@ -69,9 +69,9 @@ export default function News(props) {
             </div>
             <div style={styles.container1}>
                 <h3 style={styles.h3}> {date}</h3>
-                <a id='button' data-testid="button" className='button' onClick={() => funcionDelete(element,arreglo)}>
+                <button id='button' data-testid="button" className='button' onClick={() => funcionDelete(element,arreglo)}>
                     <img style ={styles.img} alt='img' src={'./img/trash-bin.png'} />
-                </a>    
+                </button>    
             </div>
         </div>
     )

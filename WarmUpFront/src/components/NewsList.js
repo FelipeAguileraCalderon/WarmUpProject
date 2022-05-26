@@ -36,7 +36,7 @@ export default function NewsList() {
 
         setInterval(() => {
             const date = new Date()
-            if(parseInt(date.getMinutes()) == 1 && parseInt(date.getSeconds()) == 0){
+            if(parseInt(date.getMinutes()) === 1 && parseInt(date.getSeconds()) === 0){
                 axios.get('http://localhost:3001/new').then(
                     res => {
                         setNews(res.data)
@@ -64,13 +64,16 @@ export default function NewsList() {
                     const day2 = new Date(pos.created_at)
                     return day2.valueOf() - day1.valueOf()
                 }).map(el => {
-                    if(el.status != false){
+                    if(el.status !== false){
                         if(el.story_title != null || el.title != null){
                             if(el.story_url != null || el.url != null){
                                 return <News key={el.story_id} arreglo={news} funcionDelete={deleteNew} element={el}/>
-                            }   
-                        } 
+                            }
+                            else return false   
+                        }
+                        else return false 
                     }
+                    else return false
                 })} 
             </div>
         </div>
