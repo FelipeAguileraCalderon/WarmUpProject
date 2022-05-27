@@ -28,7 +28,7 @@ export default function NewsList() {
     const [news, setNews] = useState([])
         
     useEffect(() => {
-        axios.get('http://localhost:3001/new').then(
+        axios.get('http://107.23.126.74:3001/new').then(
             res => {
                 setNews(res.data)
             }
@@ -37,7 +37,7 @@ export default function NewsList() {
         setInterval(() => {
             const date = new Date()
             if(parseInt(date.getMinutes()) === 1 && parseInt(date.getSeconds()) === 0){
-                axios.get('http://localhost:3001/new').then(
+                axios.get('http://107.23.126.74/new').then(
                     res => {
                         setNews(res.data)
                     }
@@ -48,8 +48,8 @@ export default function NewsList() {
     }, []);
 
     async function deleteNew(element){
-        await axios.put(`http://localhost:3001/new/update/${element.story_id.toString()}`)
-        axios.get('http://localhost:3001/new').then(
+        await axios.put(`http://107.23.126.74/new/update/${element.story_id.toString()}`)
+        axios.get('http://107.23.126.74/new').then(
             res => {
                 setNews(res.data)
             }
