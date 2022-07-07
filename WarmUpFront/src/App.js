@@ -1,37 +1,30 @@
-import {Component} from 'react'
-import './App.css';
-import Header from './components/Header'
-import NewsList from './components/NewsList';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/authContext';
+import Home from './routes/Home';
+import { Login } from './routes/Login';
+import { ProtectedRoute } from './routes/ProtectedRoute';
 
 const styles = {
-  back: {
-    height: '100%',
-    width: '100%',
-    margin: 0,
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'relative'
-  },
-  main: {
-    width: '100%',
-    height: '100%',
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center'
-  },
-}
-
-class App extends Component{
-  render(){
-    return(
-      <div style={styles.back}>
-        <Header />
-        <div style={styles.main}>
-          <NewsList />
-        </div>
-      </div>  
-    )
+  h1: {
+    color: 'white',
+    marginLeft: '10px'
   }
 }
 
-export default App;
+export default function App () {
+
+  return(
+    <AuthProvider>
+      <Routes>
+        <Route path='/' element={<Navigate replace to='/home'/>}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/home' element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }/>
+        <Route path='*' element={<h1 style={styles.h1}>404 Page Not Found</h1>}/>
+      </Routes>
+    </AuthProvider>      
+  )
+}
